@@ -1,0 +1,23 @@
+description = 'Web Message Normal (Web)'
+
+artifactId = "web-message-normal"
+version = "1.0$config.subffix"
+
+eclipse {
+	project {
+		linkedResource name: 'src/main/webapp/resources', type: '2', location: webResourcesLocation
+		linkedResource name: 'src/main/webapp/WEB-INF/views', type: '2', location: webViewsLocation
+	}
+}
+war {
+	from files(project(':web:web-resources-views').file('src/main/webapp')) {into('/')}
+}
+
+dependencies {
+        
+    // module
+    compile "com.linkedhole.platform.infra:infra-security-product:latest.integration@jar"
+    compile project(":module:module-shared")
+    compile project(":module:module-xmpp-message")
+    
+}

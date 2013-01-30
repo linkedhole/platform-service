@@ -1,0 +1,42 @@
+description = "linkedhole Platform Service Web"
+
+subprojects {
+    
+	defaultTasks 'clean', 'build', 'uploadArchives'
+	
+	apply plugin: 'war'
+	
+	group = "com.linkedhole.platform.service.web"
+			  
+	eclipse {
+		classpath {
+			defaultOutputDir = file("$webAppDirName/WEB-INF/classes")
+		}
+	}
+	
+	dependencies {
+		
+		// module
+		compile "com.linkedhole.platform.infra:infra-config-web:latest.integration@jar"		
+		compile "com.linkedhole.platform.shared:shared-web-application:latest.integration@jar"
+		
+		// thymeleaf
+		compile "org.thymeleaf:thymeleaf:2.0.13@jar",
+				"org.thymeleaf:thymeleaf-spring3:2.0.13@jar"
+				
+		// Servlet
+		providedCompile "javax.servlet:javax.servlet-api:3.0.1@jar",
+						"javax.servlet:jsp-api:2.0@jar",
+						"javax.servlet:jstl:1.2@jar"
+	}
+	
+	war << {
+		println "##### war doLast Copy Repos #####"
+		copy {
+			from war.archivePath
+			into flatReposLocation
+			include '*.war'
+		}
+	}
+}
+

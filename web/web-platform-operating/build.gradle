@@ -1,0 +1,13 @@
+description = 'Web Platform Operating (Web)'
+
+artifactId = "web-platform-operating"
+version = "1.0$config.subffix"
+
+dependencies {
+		
+	// module
+	compile "com.linkedhole.platform.infra:infra-security-operating:latest.integration@jar"
+	compile project(path: ":module:module-shared", configuration: "jarService")
+	compile project(path: ":module:module-xmpp-message", configuration: "jarService")
+	
+}

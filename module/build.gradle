@@ -1,0 +1,15 @@
+description = "linkedhole Platform Module"
+
+subprojects {
+
+	configurations { jarService }
+
+	task jarService(type: Jar, description: "Assembles a jar archive containing the main exclude web classes") { 
+		excludes = ["**/*Controller.*"]
+	}
+
+	artifacts {
+	   jarService jarService
+	}
+
+}	
