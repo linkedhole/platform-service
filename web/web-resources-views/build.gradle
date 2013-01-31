@@ -1,1 +1,3 @@
 description = 'Web Resources Views (UX)'
+
+defaultTasks 'clean', 'build'

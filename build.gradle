@@ -32,7 +32,7 @@ subprojects {
 		mavenCentral()
         maven { url 'http://repo.springsource.org/libs-milestone' }
         maven { url 'http://repo.springsource.org/plugins-release' }
-        flatDir { dirs flatReposLocation }
+        flatDir { dirs "$flatReposLocation/lib" }
 		// maven { url "$config.nexus.publicRepository" }
     }
     
@@ -269,14 +269,15 @@ project(":web") {
                             "javax.servlet:jsp-api:2.0@jar",
                             "javax.servlet:jstl:1.2@jar"
         }
-        
-        war << {
-            println "##### war doLast Copy Repos #####"
-            copy {
-                from war.archivePath
-                into flatReposLocation
-                include '*.war'
-            }
-        }
+		if(project.name!="web-resources-views") {
+	        war << {
+	            println "##### war doLast Copy Repos #####"
+	            copy {
+	                from war.archivePath
+	                into "$flatReposLocation/deploy"
+	                include '*.war'
+	            }
+	        }
+		}
     }
 }
