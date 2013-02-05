@@ -3,6 +3,6 @@ include "module:module-xmpp-message"
 include "module:module-shared"
 
 // service web project
-include "web:web-message-normal"
+include "web:web-antsrun-normal"
 include "web:web-platform-operating"
 include "web:web-resources-views"

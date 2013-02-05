@@ -1,4 +1,4 @@
-package com.linkedhole.platform.message;
+package com.linkedhole.marketplace.antsrun.home;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Slf4j
 @Controller
-public class MessageController {
+public class HomeController {
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/message", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
 		log.debug("Welcome home! the client locale is "+ locale.toString());
@@ -30,6 +30,6 @@ public class MessageController {
 		
 		model.addAttribute("result", formattedDate );
 		
-		return "home/singin";
+		return "home/signin";
 	}
 }

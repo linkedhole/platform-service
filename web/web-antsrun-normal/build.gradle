@@ -1,7 +1,7 @@
-description = 'Web Message Normal (Web)'
+description = 'Web Antsrun Normal (Web)'
 
-artifactId = "web-message-normal"
-version = "1.0$config.subffix"
+artifactId = "web-antsrun-normal"
+version = "1.0"
 
 eclipse {
 	project {
@@ -19,5 +19,7 @@ dependencies {
     compile "com.linkedhole.platform.infra:infra-security-product:latest.integration@jar"
     compile project(":module:module-shared")
     compile project(":module:module-xmpp-message")
+	
+	testCompile project(":web:web-resources-views")
     
 }

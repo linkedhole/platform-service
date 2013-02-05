@@ -1,7 +1,7 @@
 description = 'Web Platform Operating (Web)'
 
 artifactId = "web-platform-operating"
-version = "1.0$config.subffix"
+version = "1.0"
 
 dependencies {
 		
