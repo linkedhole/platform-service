@@ -230,6 +230,8 @@ project(":module") {
 
     description = "linkedhole Platform Module"
     
+    defaultTasks 'clean', 'build'
+    
     subprojects {
     
         configurations { jarService }
