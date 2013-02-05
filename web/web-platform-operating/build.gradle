@@ -1,7 +1,11 @@
 description = 'Web Platform Operating (Web)'
 
-artifactId = "web-platform-operating"
-version = "1.0"
+uploadArchives {
+    repositories.mavenDeployer {
+        pom.version = "1.0"
+        pom.artifactId = "web-platform-operating"
+    }
+}
 
 dependencies {
 		

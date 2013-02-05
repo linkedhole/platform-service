@@ -1,7 +1,11 @@
 description = 'Web Antsrun Normal (Web)'
 
-artifactId = "web-antsrun-normal"
-version = "1.0"
+uploadArchives {
+    repositories.mavenDeployer {
+        pom.version = "1.0"
+        pom.artifactId = "web-antsrun-normal"
+    }
+}
 
 eclipse {
 	project {
